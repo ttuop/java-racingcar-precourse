@@ -1,8 +1,8 @@
 package game.racingcar;
 
-import static game.racingcar.Fuels.*;
-
 public class Engine {
+
+	public static final String INVALID_FUEL_MESSAGE = "연료가 유효하지 않습니다.";
 
 	public MoveResult run(Fuel fuel) {
 		if (fuel == null) {
