@@ -13,7 +13,7 @@ class MileageTest {
 		Mileage mileage = new Mileage();
 		mileage.increase(MoveResult.GO);
 
-		assertThat(mileage.get()).isEqualTo(1);
+		assertThat(mileage.toString()).isEqualTo("-");
 	}
 
 	@DisplayName("정자했을 경우 증가하지 않는 마일리지 테스트")
@@ -22,6 +22,6 @@ class MileageTest {
 		Mileage mileage = new Mileage();
 		mileage.increase(MoveResult.STOP);
 
-		assertThat(mileage.get()).isEqualTo(0);
+		assertThat(mileage.toString()).isEqualTo("");
 	}
 }
