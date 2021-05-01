@@ -1,5 +1,6 @@
 package game.racingcar;
 
+import static game.racingcar.Fuels.*;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
@@ -25,6 +26,6 @@ class FuelsTest {
 		assertThatThrownBy(() -> {
 			fuels.fill(null);
 		}).isInstanceOf(IllegalArgumentException.class)
-			.hasMessage("연료가 유효하지 않습니다.");
+			.hasMessage(INVALID_FUEL_MESSAGE);
 	}
 }
