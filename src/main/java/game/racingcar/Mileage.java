@@ -8,6 +8,10 @@ public class Mileage {
 		value += go.getValue();
 	}
 
+	public int get() {
+		return value;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
