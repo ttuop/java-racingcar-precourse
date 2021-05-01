@@ -20,4 +20,8 @@ public class Car {
 	public String toString() {
 		return name.get() + COLON + mileage;
 	}
+
+	public int getMileage() {
+		return mileage.get();
+	}
 }
