@@ -3,11 +3,11 @@ package game.racingcar;
 import static game.racingcar.Message.*;
 import static game.racingcar.SpecialChar.*;
 
-import java.util.ArrayDeque;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 /**
  * 자동차 그룹 스냅샷
@@ -52,24 +52,18 @@ public class RacingSnapShot {
 	 * 스냅샷에서 가장 멀리 이동한 차를 출력한다.
 	 */
 	public void printWinner() {
-		Queue<String> winner = getWinner();
-		StringBuilder builder = new StringBuilder();
+		List<String> winner = getWinner();
 
-		while (!winner.isEmpty()) {
-			builder.append(winner.poll());
-			appendDelimiter(winner, builder);
-		}
-
-		System.out.printf(WINNER_FORMAT_MESSAGE.getMessage(), builder);
+		System.out.printf(WINNER_FORMAT_MESSAGE.getMessage(), String.join(COMMA.getValue(), winner));
 	}
 
-	private Queue<String> getWinner() {
+	private List<String> getWinner() {
 		final int highest = getHighestMileage();
-		final Queue<String> queue = new ArrayDeque<>();
+		final List<String> list = new LinkedList<>();
 
-		map.forEach((carName, mileage) -> addName(highest, queue, carName, mileage));
+		map.forEach((carName, mileage) -> addName(highest, list, carName, mileage));
 
-		return queue;
+		return list;
 	}
 
 	private Integer getHighestMileage() {
@@ -79,15 +73,10 @@ public class RacingSnapShot {
 		return queue.peek();
 	}
 
-	private void addName(int highest, Queue<String> queue, CarName carName, Mileage mileage) {
+	private void addName(int highest, List<String> list, CarName carName, Mileage mileage) {
 		if (mileage.get() == highest) {
-			queue.add(carName.get());
+			list.add(carName.get());
 		}
 	}
 
-	private void appendDelimiter(Queue<String> winner, StringBuilder builder) {
-		if (!winner.isEmpty()) {
-			builder.append(COMMA.getValue());
-		}
-	}
 }
