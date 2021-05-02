@@ -13,11 +13,20 @@ public class Mileage {
 	}
 
 	public Mileage(Mileage mileage) {
+		if (mileage == null) {
+			this.value = 0;
+			return;
+		}
+
 		this.value = mileage.get();
 	}
 
-	public void increase(MoveResult go) {
-		value += go.getValue();
+	public void increase(MoveResult result) {
+		if (result == null) {
+			return;
+		}
+
+		value += result.getValue();
 	}
 
 	public int get() {
