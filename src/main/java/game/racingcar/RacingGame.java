@@ -3,6 +3,11 @@ package game.racingcar;
 import static game.racingcar.Message.*;
 import static game.racingcar.PlayCount.*;
 
+/**
+ * 자동차 레이싱 게임
+ *
+ * @author ttuop
+ */
 public class RacingGame {
 
 	private final int playCount;

@@ -1,5 +1,10 @@
 package game.racingcar;
 
+/**
+ * 자동차
+ *
+ * @author ttuop
+ */
 public class Car {
 
 	private final Engine engine = new Engine();

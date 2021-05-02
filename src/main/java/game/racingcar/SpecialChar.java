@@ -1,5 +1,10 @@
 package game.racingcar;
 
+/**
+ * 특수 문자
+ *
+ * @author ttuop
+ */
 public enum SpecialChar {
 	DASH("-"), COMMA(","), COLON_SEPARATOR(" : ");
 

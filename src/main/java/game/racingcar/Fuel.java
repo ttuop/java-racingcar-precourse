@@ -4,7 +4,7 @@ import static game.racingcar.FuelBoundary.*;
 import static game.racingcar.Message.*;
 
 /**
- * 연료 클래스
+ * 자동차 연료
  *
  * @author ttuop
  */

@@ -8,6 +8,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 자동차 그룹
+ *
+ * @author ttuop
+ */
 public class Cars {
 
 	private final List<Car> list;

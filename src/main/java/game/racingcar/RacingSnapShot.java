@@ -9,6 +9,11 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/**
+ * 자동차 그룹 스냅샷
+ *
+ * @author ttuop
+ */
 public class RacingSnapShot {
 
 	private final Map<CarName, Mileage> map;

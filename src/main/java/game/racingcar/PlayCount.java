@@ -1,5 +1,10 @@
 package game.racingcar;
 
+/**
+ * 자동차 이동 횟수
+ *
+ * @author ttuop
+ */
 public enum PlayCount {
 	MINIMUM(1), MAXIMUM(10);
 
