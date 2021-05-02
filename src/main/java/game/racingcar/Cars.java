@@ -1,21 +1,21 @@
 package game.racingcar;
 
+import static game.racingcar.Message.*;
+import static game.racingcar.SpecialChar.*;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Cars {
-	static final String INVALID_PLAY_COUNT_MESSAGE = "시도 횟수가 유효하지 않습니다.";
-	static final String INVALID_NAMES_MESSAGE = "자동자 이름이 유효하지 않습니다.";
-	static final String DELIMITER = ",";
 
 	private final List<Car> list;
 
 	public Cars(String str) {
 		validateNames(str);
 
-		String[] names = str.split(DELIMITER);
+		String[] names = str.split(COMMA.getValue());
 		list = new ArrayList<>(names.length);
 
 		for (String name : names) {
@@ -25,7 +25,7 @@ public class Cars {
 
 	private void validateNames(String names) {
 		if (names == null || names.length() == 0) {
-			throw new IllegalArgumentException(INVALID_NAMES_MESSAGE);
+			throw new IllegalArgumentException(INVALID_NAME_MESSAGE.getMessage());
 		}
 	}
 

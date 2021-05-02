@@ -1,5 +1,8 @@
 package game.racingcar;
 
+import static game.racingcar.FuelBoundary.*;
+import static game.racingcar.Message.*;
+
 /**
  * 연료 클래스
  *
@@ -7,20 +10,18 @@ package game.racingcar;
  */
 public class Fuel {
 
-	public static final String INVALID_NUMBER_EXCEPTION = "유효하지 않은 숫자입니다.";
-
 	final private int amount;
 
 	public Fuel(int amount) {
-		if (amount < 0 || amount > 9) {
-			throw new IllegalArgumentException(INVALID_NUMBER_EXCEPTION);
+		if (amount < LOWER.getValue() || amount > UPPER.getValue()) {
+			throw new IllegalArgumentException(INVALID_NUMBER_MESSAGE.getMessage());
 		}
 
 		this.amount = amount;
 	}
 
 	public boolean isEnough() {
-		return amount > 3;
+		return amount >= MINIMUM_TO_GO.getValue();
 	}
 
 }

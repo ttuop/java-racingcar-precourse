@@ -1,5 +1,6 @@
 package game.racingcar;
 
+import static game.racingcar.Message.*;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
@@ -31,7 +32,7 @@ public class FuelTest {
 	@ValueSource(ints = {-1, 10})
 	void testValidate(int input) {
 		assertThatThrownBy(() -> new Fuel(input)).isInstanceOf(IllegalArgumentException.class)
-			.hasMessageContaining(Fuel.INVALID_NUMBER_EXCEPTION);
+			.hasMessageContaining(INVALID_NUMBER_MESSAGE.getMessage());
 	}
 
 }

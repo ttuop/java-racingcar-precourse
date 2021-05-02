@@ -1,6 +1,6 @@
 package game.racingcar;
 
-import static game.racingcar.RacingGame.*;
+import static game.racingcar.Message.*;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,7 +13,7 @@ class RacingGameTest {
 	void testInvalidPlayCount(String input) {
 		assertThatThrownBy(() -> new RacingGame("111,222", input))
 			.isInstanceOf(IllegalArgumentException.class)
-			.hasMessage(INVALID_PLAY_COUNT_MESSAGE);
+			.hasMessage(INVALID_PLAY_COUNT_MESSAGE.getMessage());
 	}
 
 }

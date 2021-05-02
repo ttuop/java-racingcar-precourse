@@ -4,7 +4,8 @@ public class Mileage {
 
 	private int value;
 
-	public Mileage() { }
+	public Mileage() {
+	}
 
 	public Mileage(Mileage mileage) {
 		this.value = mileage.get();

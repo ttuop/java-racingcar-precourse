@@ -1,6 +1,7 @@
 package game.racingcar;
 
-import static game.racingcar.Constants.*;
+import static game.racingcar.Message.*;
+import static game.racingcar.SpecialChar.*;
 
 import java.util.ArrayDeque;
 import java.util.Collections;
@@ -10,13 +11,11 @@ import java.util.Queue;
 
 public class RacingSnapShot {
 
-	private static final String INVALID_SNAPSHOT_LIST_MESSAGE = "스냅샷이 유효하지 않습니다.";
-
 	private final Map<CarName, Mileage> map;
 
 	public RacingSnapShot(Map<CarName, Mileage> map) {
 		if (map == null) {
-			throw new IllegalArgumentException(INVALID_SNAPSHOT_LIST_MESSAGE);
+			throw new IllegalArgumentException(INVALID_SNAPSHOT_MESSAGE.getMessage());
 		}
 
 		this.map = map;
@@ -27,7 +26,7 @@ public class RacingSnapShot {
 	 */
 	public void print() {
 		for (Map.Entry<CarName, Mileage> entry : map.entrySet()) {
-			System.out.println(entry.getKey().get() + " : " + convertDash(entry));
+			System.out.println(entry.getKey().get() + COLON_SEPARATOR.getValue() + convertDash(entry));
 		}
 
 		System.out.println();
@@ -38,7 +37,7 @@ public class RacingSnapShot {
 		StringBuilder builder = new StringBuilder();
 
 		for (int i = 0; i < cnt; i++) {
-			builder.append(DASH);
+			builder.append(DASH.getValue());
 		}
 
 		return builder.toString();
@@ -56,7 +55,7 @@ public class RacingSnapShot {
 			appendDelimiter(winner, builder);
 		}
 
-		System.out.printf("%s가 최종 우승했습니다.%n", builder);
+		System.out.printf(WINNER_FORMAT_MESSAGE.getMessage(), builder);
 	}
 
 	private Queue<String> getWinner() {
@@ -83,7 +82,7 @@ public class RacingSnapShot {
 
 	private void appendDelimiter(Queue<String> winner, StringBuilder builder) {
 		if (!winner.isEmpty()) {
-			builder.append(COMMA);
+			builder.append(COMMA.getValue());
 		}
 	}
 }

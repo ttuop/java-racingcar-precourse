@@ -1,10 +1,9 @@
 package game.racingcar;
 
+import static game.racingcar.Message.*;
 import static game.racingcar.PlayCount.*;
 
 public class RacingGame {
-
-	static final String INVALID_PLAY_COUNT_MESSAGE = "실행횟수는 숫자를 입력해주세요.";
 
 	private final int playCount;
 	private final Cars cars;
@@ -21,7 +20,7 @@ public class RacingGame {
 		try {
 			return Integer.parseInt(str);
 		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException(INVALID_PLAY_COUNT_MESSAGE);
+			throw new IllegalArgumentException(INVALID_PLAY_COUNT_MESSAGE.getMessage());
 		}
 	}
 
@@ -41,7 +40,7 @@ public class RacingGame {
 
 	private void validateCount(int count) {
 		if (count < MINIMUM.getCount() || count > MAXIMUM.getCount()) {
-			throw new IllegalArgumentException(INVALID_PLAY_COUNT_MESSAGE);
+			throw new IllegalArgumentException(INVALID_PLAY_COUNT_MESSAGE.getMessage());
 		}
 	}
 

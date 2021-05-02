@@ -1,5 +1,6 @@
 package game.racingcar;
 
+import static game.racingcar.Message.*;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,7 +12,7 @@ public class CarsTest {
 	@ValueSource(strings = {""})
 	void testInvalidCarNames(String input) {
 		assertThatThrownBy(() -> new Cars(input)).isInstanceOf(IllegalArgumentException.class)
-			.hasMessage(Cars.INVALID_NAMES_MESSAGE);
+			.hasMessage(INVALID_NAME_MESSAGE.getMessage());
 	}
 
 }
