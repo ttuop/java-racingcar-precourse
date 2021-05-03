@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * @author ttuop
  */
-public class RandomNumber {
+class RandomNumber {
 
 	private static final Random RANDOM = new Random();
 	private static final int BOUND = 10;

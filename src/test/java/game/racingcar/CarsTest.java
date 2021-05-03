@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-public class CarsTest {
+class CarsTest {
 
 	@ParameterizedTest
 	@ValueSource(strings = {""})

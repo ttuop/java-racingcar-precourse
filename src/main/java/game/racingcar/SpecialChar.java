@@ -5,7 +5,7 @@ package game.racingcar;
  *
  * @author ttuop
  */
-public enum SpecialChar {
+enum SpecialChar {
 	DASH("-"), COMMA(","), COLON_SEPARATOR(" : ");
 
 	private final String value;
@@ -14,7 +14,7 @@ public enum SpecialChar {
 		this.value = value;
 	}
 
-	public String getValue() {
+	String getValue() {
 		return value;
 	}
 }

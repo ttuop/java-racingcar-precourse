@@ -13,11 +13,11 @@ import java.util.Map;
  *
  * @author ttuop
  */
-public class Cars {
+class Cars {
 
 	private final List<Car> list;
 
-	public Cars(String str) {
+	Cars(String str) {
 		validateNames(str);
 
 		String[] names = str.split(COMMA.getValue());
@@ -34,7 +34,7 @@ public class Cars {
 		}
 	}
 
-	public void move() {
+	void move() {
 		for (Car car : list) {
 			car.move(new Fuel(RandomNumber.get()));
 		}
@@ -45,7 +45,7 @@ public class Cars {
 	 *
 	 * @return 레이싱 스냅샷 객체
 	 */
-	public RacingSnapShot getSnapShot() {
+	RacingSnapShot getSnapShot() {
 		Map<CarName, Mileage> map = new LinkedHashMap<>();
 		list.forEach(car -> map.put(car.getName(), new Mileage(car.getMileage())));
 

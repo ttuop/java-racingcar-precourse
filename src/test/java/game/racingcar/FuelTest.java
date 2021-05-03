@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-public class FuelTest {
+class FuelTest {
 
 	@DisplayName("연료가 불충분한 경우 테스트")
 	@ParameterizedTest

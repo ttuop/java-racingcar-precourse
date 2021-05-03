@@ -5,7 +5,7 @@ package game.racingcar;
  *
  * @author ttuop
  */
-public enum PlayCount {
+enum PlayCount {
 	MINIMUM(1), MAXIMUM(10);
 
 	private final int count;
@@ -14,7 +14,7 @@ public enum PlayCount {
 		this.count = count;
 	}
 
-	public int getCount() {
+	int getCount() {
 		return count;
 	}
 }

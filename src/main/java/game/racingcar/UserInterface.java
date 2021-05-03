@@ -7,19 +7,19 @@ import java.util.Scanner;
  *
  * @author ttuop
  */
-public class UserInterface {
+class UserInterface {
 
 	private static final Scanner SCANNER = new Scanner(System.in);
 
-	public static String receive() {
+	static String receive() {
 		return SCANNER.nextLine();
 	}
 
-	public static void send(String message) {
+	static void send(String message) {
 		System.out.println(message);
 	}
 
-	public static void shutdown() {
+	static void shutdown() {
 		SCANNER.close();
 	}
 

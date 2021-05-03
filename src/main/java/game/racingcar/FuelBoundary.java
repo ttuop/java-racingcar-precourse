@@ -16,7 +16,7 @@ package game.racingcar;
  *
  * @author ttuop
  */
-public enum FuelBoundary {
+enum FuelBoundary {
 	LOWER(0), UPPER(9), MINIMUM_TO_GO(4);
 
 	private final int value;
@@ -25,7 +25,7 @@ public enum FuelBoundary {
 		this.value = value;
 	}
 
-	public int getValue() {
+	int getValue() {
 		return value;
 	}
 }

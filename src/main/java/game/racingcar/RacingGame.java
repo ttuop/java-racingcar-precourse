@@ -8,13 +8,13 @@ import static game.racingcar.PlayCount.*;
  *
  * @author ttuop
  */
-public class RacingGame {
+class RacingGame {
 
 	private final int playCount;
 	private final Cars cars;
 	private RacingSnapShot snapShot;
 
-	public RacingGame(String names, String countStr) {
+	RacingGame(String names, String countStr) {
 		this.playCount = parsePlayCount(countStr);
 		validateCount(playCount);
 
@@ -33,7 +33,7 @@ public class RacingGame {
 	 * 사용자가 입력한 자동차들을 랜덤 값에 따라 이동시키거나 정지시키고 자동차들의 상태를 출력한다.
 	 * 레이싱이 끝나면 최종 우승자를 출력한다.
 	 */
-	public void play() {
+	void play() {
 		for (int i = 0; i < playCount; i++) {
 			cars.move();
 			snapShot = cars.getSnapShot();

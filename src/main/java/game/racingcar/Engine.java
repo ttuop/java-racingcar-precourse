@@ -8,14 +8,18 @@ import static game.racingcar.MoveResult.*;
  *
  * @author ttuop
  */
-public class Engine {
+class Engine {
 
-	public MoveResult run(Fuel fuel) {
+	MoveResult run(Fuel fuel) {
+		validate(fuel);
+
+		return fuel.isEnough() ? GO : STOP;
+	}
+
+	private void validate(Fuel fuel) {
 		if (fuel == null) {
 			throw new IllegalArgumentException(INVALID_FUEL_MESSAGE.getMessage());
 		}
-
-		return fuel.isEnough() ? GO : STOP;
 	}
 
 }

@@ -5,7 +5,7 @@ package game.racingcar;
  *
  * @author ttuop
  */
-public enum MoveResult {
+enum MoveResult {
 	GO(1), STOP(0);
 
 	private final int value;
@@ -14,7 +14,7 @@ public enum MoveResult {
 		this.value = value;
 	}
 
-	public int getValue() {
+	int getValue() {
 		return value;
 	}
 }

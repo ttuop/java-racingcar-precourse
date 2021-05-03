@@ -5,7 +5,7 @@ package game.racingcar;
  *
  * @author ttuop
  */
-public enum Message {
+enum Message {
 	INPUT_NAME_MESSAGE("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,)를 기준으로 구분하고 5자 이내만 가능합니다.)"),
 	INPUT_PLAY_COUNT_MESSAGE("시도할 회수는 몇 회인가요? (1회에서 10회까지 가능합니다.)"),
 	INVALID_FUEL_MESSAGE("연료가 유효하지 않습니다."),
@@ -22,7 +22,7 @@ public enum Message {
 		this.message = message;
 	}
 
-	public String getMessage() {
+	String getMessage() {
 		return message;
 	}
 }

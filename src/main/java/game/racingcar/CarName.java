@@ -8,19 +8,23 @@ import static game.racingcar.Message.*;
  *
  * @author ttuop
  */
-public class CarName {
+class CarName {
 
 	private final String name;
 
-	public CarName(String name) {
-		if (name == null || name.length() > CAR_NAME_LENGTH.getLength()) {
-			throw new IllegalArgumentException(INVALID_NAME_MESSAGE.getMessage());
-		}
+	CarName(String name) {
+		validate(name);
 
 		this.name = name;
 	}
 
-	public String get() {
+	private void validate(String name) {
+		if (name == null || name.length() > CAR_NAME_LENGTH.getLength()) {
+			throw new IllegalArgumentException(INVALID_NAME_MESSAGE.getMessage());
+		}
+	}
+
+	String get() {
 		return name;
 	}
 }

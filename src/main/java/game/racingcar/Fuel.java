@@ -8,19 +8,23 @@ import static game.racingcar.Message.*;
  *
  * @author ttuop
  */
-public class Fuel {
+class Fuel {
 
 	final private int amount;
 
-	public Fuel(int amount) {
-		if (amount < LOWER.getValue() || amount > UPPER.getValue()) {
-			throw new IllegalArgumentException(INVALID_NUMBER_MESSAGE.getMessage());
-		}
+	Fuel(int amount) {
+		validate(amount);
 
 		this.amount = amount;
 	}
 
-	public boolean isEnough() {
+	private void validate(int amount) {
+		if (amount < LOWER.getValue() || amount > UPPER.getValue()) {
+			throw new IllegalArgumentException(INVALID_NUMBER_MESSAGE.getMessage());
+		}
+	}
+
+	boolean isEnough() {
 		return amount >= MINIMUM_TO_GO.getValue();
 	}
 

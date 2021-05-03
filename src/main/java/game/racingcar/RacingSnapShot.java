@@ -14,11 +14,11 @@ import java.util.PriorityQueue;
  *
  * @author ttuop
  */
-public class RacingSnapShot {
+class RacingSnapShot {
 
 	private final Map<CarName, Mileage> map;
 
-	public RacingSnapShot(Map<CarName, Mileage> map) {
+	RacingSnapShot(Map<CarName, Mileage> map) {
 		if (map == null) {
 			throw new IllegalArgumentException(INVALID_SNAPSHOT_MESSAGE.getMessage());
 		}
@@ -29,7 +29,7 @@ public class RacingSnapShot {
 	/**
 	 * 현재 스탭샷에 있는 자동차들의 상태를 출력한다.
 	 */
-	public void print() {
+	void print() {
 		for (Map.Entry<CarName, Mileage> entry : map.entrySet()) {
 			System.out.println(entry.getKey().get() + COLON_SEPARATOR.getValue() + convertDash(entry));
 		}
@@ -51,7 +51,7 @@ public class RacingSnapShot {
 	/**
 	 * 스냅샷에서 가장 멀리 이동한 차를 출력한다.
 	 */
-	public void printWinner() {
+	void printWinner() {
 		List<String> winner = getWinner();
 
 		System.out.printf(WINNER_FORMAT_MESSAGE.getMessage(), String.join(COMMA.getValue(), winner));

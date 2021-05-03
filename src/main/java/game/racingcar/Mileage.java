@@ -5,14 +5,14 @@ package game.racingcar;
  *
  * @author ttuop
  */
-public class Mileage {
+class Mileage {
 
 	private int value;
 
-	public Mileage() {
+	Mileage() {
 	}
 
-	public Mileage(Mileage mileage) {
+	Mileage(Mileage mileage) {
 		if (mileage == null) {
 			this.value = 0;
 			return;
@@ -21,7 +21,7 @@ public class Mileage {
 		this.value = mileage.get();
 	}
 
-	public void increase(MoveResult result) {
+	void increase(MoveResult result) {
 		if (result == null) {
 			return;
 		}
@@ -29,7 +29,7 @@ public class Mileage {
 		value += result.getValue();
 	}
 
-	public int get() {
+	int get() {
 		return value;
 	}
 }

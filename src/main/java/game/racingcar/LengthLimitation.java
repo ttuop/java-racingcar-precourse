@@ -10,7 +10,7 @@ package game.racingcar;
  *
  * @author ttuop
  */
-public enum LengthLimitation {
+enum LengthLimitation {
 	CAR_NAME_LENGTH(5);
 
 	private final int length;
@@ -19,7 +19,7 @@ public enum LengthLimitation {
 		this.length = length;
 	}
 
-	public int getLength() {
+	int getLength() {
 		return length;
 	}
 }
