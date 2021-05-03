@@ -16,6 +16,7 @@ public class Application {
 			UserInterface.send(INPUT_PLAY_COUNT_MESSAGE.getMessage());
 			String count = UserInterface.receive();
 
+			UserInterface.send(RACING_RESULT_MESSAGE.getMessage());
 			RacingGame game = new RacingGame(names, count);
 			game.play();
 		} finally {
